@@ -35,7 +35,6 @@
     <div class="card">
         <h1><?= esc($title) ?></h1>
         <p><?= esc($message) ?></p>
-        <p class="date">Fecha de la petici&oacute;n: <?= esc($date) ?></p>
         <p class="date">Renderizado con <strong>View Renderer</strong> (app/Views/home.php)</p>
     </div>
 </body>

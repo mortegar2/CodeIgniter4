@@ -9,7 +9,6 @@ class Home extends BaseController
         $data = [
             'title'   => 'Bienvenido',
             'message' => 'Hola desde CodeIgniter 4 usando el motor de plantillas View Renderer.',
-            'date'    => date('d/m/Y H:i:s'),
         ];
 
         return view('home', $data);
