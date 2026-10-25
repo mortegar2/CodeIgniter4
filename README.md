@@ -37,10 +37,19 @@ del framework mediante la función `view('home', $data)`.
 ### Ejecutar
 
 ```bash
-php spark serve          # servidor de desarrollo en http://localhost:8080
+# (una sola vez) permitir escuchar en puertos bajos sin root:
+echo "net.ipv4.ip_unprivileged_port_start=0" | sudo tee /etc/sysctl.d/99-spark-puerto80.conf >/dev/null && sudo sysctl -w net.ipv4.ip_unprivileged_port_start=0
+
+php spark serve --host "[::]" --port 80   # servidor de desarrollo en http://localhost
 ```
 
-Luego abre <http://localhost:8080/home>.
+Luego abre <http://localhost/home>.
+
+Sin el paso de `sysctl`, usa el puerto por defecto:
+
+```bash
+php spark serve --host "[::]" --port 8080   # http://localhost:8080/home
+```
 
 ### Pruebas
 
